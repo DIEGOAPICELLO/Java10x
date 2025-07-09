@@ -1,28 +1,26 @@
 package com.java10x.CadastroDePessoas.entities;
 
+import com.java10x.CadastroDePessoas.enums.StatusAtendimento;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import java.util.List;
 
 @Entity
-@Table(name = "tb_cadatro")
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
-public class Pessoa {
-
+public class Atendimento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
 
-    private String email;
+    private Enum<StatusAtendimento> statusAtendimentoEnum;
 
-    private Integer age;
+    private Pessoa pessoa;
 
-    List<Atendimento> atendimentoList;
+
 
 }
