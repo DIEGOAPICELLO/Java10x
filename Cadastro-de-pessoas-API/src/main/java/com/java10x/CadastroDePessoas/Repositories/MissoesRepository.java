@@ -1,6 +1,9 @@
 package com.java10x.CadastroDePessoas.Repositories;
 
-public interface MissoesRepository {
+import com.java10x.CadastroDePessoas.entities.Missoes;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface MissoesRepository extends JpaRepository<Missoes, Long> {
 
 
 }
