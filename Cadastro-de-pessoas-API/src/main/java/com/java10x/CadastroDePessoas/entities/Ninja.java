@@ -11,7 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Pessoa {
+public class Ninja {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,6 +23,9 @@ public class Pessoa {
 
     private Integer age;
 
-    List<Atendimento> atendimentoList;
+    //@ManyToOne uma pessoa tem um unico atendimento.
+    @ManyToOne
+    @JoinColumn(name = "missoes_id")
+    List<Missoes> missoesList;
 
 }
