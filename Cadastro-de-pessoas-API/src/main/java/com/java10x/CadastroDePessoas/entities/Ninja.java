@@ -15,18 +15,21 @@ public class Ninja {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
+    @Column(name = "name")
     private String name;
 
-    @Column(unique = true)
+    @Column(name = "email" , unique = true)
     private String email;
 
+    @Column(name = "age")
     private Integer age;
 
     //@ManyToOne uma pessoa tem um unico atendimento.
-    @ManyToOne
+   /* @ManyToOne
     @JoinColumn(name = "missoes_id")
-    List<Missoes> missoesList;
+    private List<Missoes> missoesList;*/
 
 }

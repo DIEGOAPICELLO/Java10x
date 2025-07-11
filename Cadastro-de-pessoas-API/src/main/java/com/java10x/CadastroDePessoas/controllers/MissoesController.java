@@ -28,7 +28,7 @@ public class MissoesController {
     }
 
     @PostMapping
-    public ResponseEntity<Missoes> saveMissao (@PathVariable @RequestBody Missoes missoes) {
+    public ResponseEntity<Missoes> saveMissao (@RequestBody Missoes missoes) {
         Missoes savedMissoes = missoesService.saveMissoes(missoes);
         return ResponseEntity.ok(savedMissoes);
     }

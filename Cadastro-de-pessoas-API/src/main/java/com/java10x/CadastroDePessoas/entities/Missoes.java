@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Entity
-@Table (name = "tb_cadastroAtendimento")
+@Table (name = "tb_missoes")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -18,15 +18,15 @@ public class Missoes {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "name")
     private String name;
 
     @Enumerated(EnumType.STRING)
-    private Enum<DificuldadeMissao> dificuldadeMissaoEnum;
-
-    private Ninja ninja;
+    @Column(name = "dificuldadeMissao")
+    private DificuldadeMissao dificuldadeMissao;
 
     //OneToMany uma missão pode ter vários ninjas
-    @OneToMany(mappedBy = "missoes")
-    private List<Ninja> ninjaList;
+    /*@OneToMany(mappedBy = "missoes")
+    private List<Ninja> ninjaList;*/
 
 }
