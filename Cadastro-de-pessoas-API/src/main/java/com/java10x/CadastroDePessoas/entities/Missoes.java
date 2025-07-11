@@ -20,6 +20,7 @@ public class Missoes {
 
     private String name;
 
+    @Enumerated(EnumType.STRING)
     private Enum<DificuldadeMissao> dificuldadeMissaoEnum;
 
     private Ninja ninja;

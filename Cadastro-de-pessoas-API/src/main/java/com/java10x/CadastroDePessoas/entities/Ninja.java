@@ -19,6 +19,7 @@ public class Ninja {
 
     private String name;
 
+    @Column(unique = true)
     private String email;
 
     private Integer age;
