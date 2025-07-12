@@ -28,8 +28,8 @@ public class Ninja {
     private Integer age;
 
     //@ManyToOne uma pessoa tem um unico atendimento.
-   /* @ManyToOne
+    @ManyToOne
     @JoinColumn(name = "missoes_id")
-    private List<Missoes> missoesList;*/
+    private List<Missoes> missoesList;
 
 }

@@ -33,6 +33,12 @@ public class MissoesController {
         return ResponseEntity.ok(savedMissoes);
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Missoes> updateMissao (@PathVariable Long id, @RequestBody Missoes missoes){
+        Missoes missaoAtualizada = missoesService.updateMission(id, missoes);
+        return ResponseEntity.ok(missaoAtualizada);
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteMissao (@PathVariable Long id) {
         missoesService.findById(id);

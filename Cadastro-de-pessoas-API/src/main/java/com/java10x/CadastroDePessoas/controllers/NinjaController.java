@@ -1,6 +1,8 @@
 package com.java10x.CadastroDePessoas.controllers;
 
+import com.java10x.CadastroDePessoas.entities.Missoes;
 import com.java10x.CadastroDePessoas.entities.Ninja;
+import com.java10x.CadastroDePessoas.services.MissoesService;
 import com.java10x.CadastroDePessoas.services.NinjaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -32,6 +34,12 @@ public class NinjaController {
     public ResponseEntity<Ninja> saveNinja (@Validated @RequestBody Ninja ninja) {
         Ninja savedNinja = ninjaService.saveNinja(ninja);
         return ResponseEntity.ok(savedNinja);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Ninja> updateNinja(@PathVariable Long id, @RequestBody Ninja ninja) {
+        Ninja ninjaAtualizado = ninjaService.updateNinja(id, ninja);
+        return ResponseEntity.ok(ninjaAtualizado);
     }
 
     @DeleteMapping("/{id}")
